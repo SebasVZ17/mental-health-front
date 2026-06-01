@@ -115,6 +115,11 @@ export default function RecomendacionesPage() {
                   Checkins
                 </a>
               )}
+              {usuario?.rol === 'empleado' && (
+                <a href="/dashboard/mis-checkins" className="px-4 py-2.5 rounded-lg text-white/70 hover:bg-white/10 hover:text-white transition-all font-medium">
+                  Mis checkins
+                </a>
+              )}
               <a href="/dashboard/recomendaciones" className="px-4 py-2.5 rounded-lg bg-white/10 text-white font-medium">
                 Recomendaciones
               </a>

@@ -52,4 +52,8 @@ export const citasService = {
       method: 'DELETE',
     })
   },
+
+  getMisPacientes: async (): Promise<{ id: string; nombre: string; email: string }[]> => {
+    return apiClient<{ id: string; nombre: string; email: string }[]>('/citas/mis-pacientes')
+  },
 }

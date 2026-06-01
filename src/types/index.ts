@@ -3,6 +3,9 @@ export interface Usuario {
   nombre: string
   email: string
   rol: 'empleado' | 'psicologo' | 'admin'
+  empresa?: string
+  cargo?: string
+  activo?: boolean
 }
 
 export interface AuthResponse {
@@ -18,7 +21,7 @@ export interface Cita {
   duracion_minutos: number
   estado: 'pendiente' | 'confirmada' | 'completada' | 'cancelada'
   notas?: string
-  link_reunion?: string
+  link_reunion?: string | null
   creado_en: string
   usuarios_citas_empleado_idTousuarios?: { nombre: string; email: string; empresa: string }
   usuarios_citas_psicologo_idTousuarios?: { nombre: string; email: string }
@@ -33,6 +36,7 @@ export interface Checkin {
   horas_sueno?: number
   notas?: string
   creado_en: string
+  usuarios?: { nombre: string; email: string }
 }
 
 export interface Recomendacion {

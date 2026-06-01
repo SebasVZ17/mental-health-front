@@ -52,7 +52,10 @@ export default function NuevaCitaPage() {
     }
   }
 
-  if (loading) return null
+  const hoy = new Date()
+  const minFecha = new Date(hoy.getTime() - hoy.getTimezoneOffset() * 60000)
+    .toISOString()
+    .slice(0, 16)
 
   return (
     <div className="min-h-screen bg-[#E9ECEF]">
@@ -132,6 +135,7 @@ export default function NuevaCitaPage() {
                 value={form.fecha_hora}
                 onChange={(e) => setForm({ ...form, fecha_hora: e.target.value })}
                 required
+                min={minFecha}
                 className="px-4 py-3 rounded-lg border border-[#E9ECEF] bg-white text-[#495057] outline-none focus:border-[#2A9D8F] focus:ring-2 focus:ring-[#2A9D8F]/20 transition-all"
               />
             </div>
